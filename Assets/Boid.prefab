@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 9102067430468816527}
   - component: {fileID: 6170420863524142640}
   - component: {fileID: 6170420863524142641}
+  - component: {fileID: 8766072461718220199}
   m_Layer: 0
   m_Name: Boid
   m_TagString: Untagged
@@ -241,6 +242,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b32dba029cf5ea47b370676c698464d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewRadius: 10
+--- !u!65 &8766072461718220199
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774305345000788454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48107117, y: 0.15582134, z: 0.47692207}
+  m_Center: {x: 0, y: 0.05073663, z: -0.037280776}
 --- !u!1 &2951534832390148531
 GameObject:
   m_ObjectHideFlags: 0

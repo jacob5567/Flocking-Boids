@@ -5,6 +5,8 @@ using UnityEngine;
 public class BoidScript : MonoBehaviour
 {
     private Rigidbody rb;
+    public float viewRadius = 10f;
+    public bool isMain = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,7 @@ public class BoidScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        visionRadius();
         LoopAroundArea();
     }
 
@@ -41,5 +44,18 @@ public class BoidScript : MonoBehaviour
             z = transform.position.z;
 
         transform.position = new Vector3(x, y, z);
+    }
+
+    private void visionRadius()
+    {
+        Collider[] otherColliders = Physics.OverlapSphere(transform.position, viewRadius);
+        List<Collider> seenColliders = new List<Collider>();
+        foreach (Collider c in otherColliders)
+        {
+            if(Vector3.Angle(transform.forward, c.transform.position) < 135f)
+            {
+                seenColliders.Add(c);
+            }
+        }
     }
 }
